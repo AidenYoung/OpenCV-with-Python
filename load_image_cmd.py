@@ -47,7 +47,7 @@ You can change the second parameter '1' to '0' for a grayscale image.
 '''
 
 #Display the image
-cv2.imshow("Original", image)
+cv2.imshow("Image", image)
 
 cv2.waitKey(0)
 '''The waitKey function is a keyboard interrupt.
