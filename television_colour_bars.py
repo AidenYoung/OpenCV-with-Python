@@ -12,25 +12,20 @@ Furthermore, by using NumPy's built-in high-level mathematical functions, we can
 and easily perform numerical analysis on an image.
 '''
 
-#Using NumPy initialize an image with 3 channels(RGB) and set the colour to black.
-#To set the image colour to white uncomment line 28 and 29 and comment line 18. 
+'''We construct a NumPy array using the np.zeros method with 480 rows and 640 columns, 
+	yielding a 640 × 480 pixel image. We also allocate space for 3 channels – one for Red, Green, and Blue,
+	respectively. As the name suggests, the zeros method fills every element in the array 
+	with an initial value of zero.
+Since we are representing our image as an RGB image with pixels in the range [ 0, 255 ] , 
+	it’s important that we use an 8-bit unsigned integer, or uint8.
+''' 
 image = (np.zeros((480,640,3), np.uint8))
 #cv2.imshow('black_image', image)
-'''np.zeros() initializes an array of size as defined in the parameters and sets them all to 0.
-	Hence the image is black. Uncomment line 18 to check the output.
-The first parameter defines the size of the image(h = 480, w = 640) and the number of 
-	channels (3 for RGB). 
-The second parameter defines the data type of the elements of the matrix. Since the values range from 
-	0 to 255, we use 8 bit unsigned integer.
-'''
-
-#image = (np.ones((480,640,3), np.uint8))*255
-#cv2.imshow('white_image', image)
 
 #Use NumPy array slicing to assign different colours to different slices of the image.
 '''Note: OpenCV stores RGB channels in reverse order. While we normally think in terms
 	of Red, Green, and Blue, OpenCV actually stores them in the order of Blue, Green, and Red.
-	Keep in mind this thing while assigning values or changing colours. 
+	Keep this in mind while assigning values or changing colours. 
 ''' 
 image[:,0:92] = [200,200,200]
 image[:,92:184] = [0,255,255]
